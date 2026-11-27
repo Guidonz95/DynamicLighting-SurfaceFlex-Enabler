@@ -1,0 +1,42 @@
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%Mfg%
+DriverVer=11/26/2026,21.0.0.0
+CatalogFile=VirtualLampArray.cat
+PnpLockdown=1
+[DestinationDirs]
+DefaultDestDir=12
+[SourceDisksNames]
+1=%DiskName%,,,
+[SourceDisksFiles]
+VirtualLampArray.sys=1
+[Manufacturer]
+%Mfg%=Models,NTamd64
+[Models.NTamd64]
+%DevName%=InstallSec,Root\VirtualSurfaceLampArray
+[InstallSec.NT]
+CopyFiles=Drivers_Dir
+[Drivers_Dir]
+VirtualLampArray.sys
+[InstallSec.NT.HW]
+AddReg=FilterAddReg
+[FilterAddReg]
+HKR,,"LowerFilters",0x00010000,"vhf"
+[InstallSec.NT.Services]
+AddService=VirtualLampArray,0x00000002,Driver_Service
+[Driver_Service]
+DisplayName=%DevName%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\VirtualLampArray.sys
+[InstallSec.NT.Wdf]
+KmdfService=VirtualLampArray,Kmdf_Install
+[Kmdf_Install]
+KmdfLibraryVersion=1.35
+[Strings]
+Mfg="Microsoft Surface Dynamic Lighting"
+DevName="Surface Pro Flex Keyboard LampArray"
+DiskName="Surface LampArray Media"

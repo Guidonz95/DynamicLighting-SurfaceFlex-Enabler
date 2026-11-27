@@ -1,0 +1,8 @@
+﻿{
+  "MaxLuxCutoff": 250.0,
+  "MaxBrightnessDarkPercent": 100,
+  "MinBrightnessRoomPercent": 0,
+  "HysteresisPercent": 18,
+  "InvertCurve": true,
+  "PollIntervalMs": 120
+}
